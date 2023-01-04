@@ -7,8 +7,12 @@ public abstract class Vehicle
     public Engine Engine { get; set; }
     public Chassis Chassis { get; set; }
     public Transmission Transmission { get; set; }
+
+    public Vehicle()
+    {
+    }
     
-    public Vehicle( string name,Engine engine, Chassis chassis, Transmission transmission)
+    public void SetInfo(string name,Engine engine, Chassis chassis, Transmission transmission)
     {
         Id = Guid.NewGuid();
         Name = name;
