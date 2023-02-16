@@ -1,0 +1,15 @@
+D:\tasks_epam\ConsoleApp1\Tasks\bin\Debug\net6.0\Tasks.exe
+D:\tasks_epam\ConsoleApp1\Tasks\bin\Debug\net6.0\Tasks.deps.json
+D:\tasks_epam\ConsoleApp1\Tasks\bin\Debug\net6.0\Tasks.runtimeconfig.json
+D:\tasks_epam\ConsoleApp1\Tasks\bin\Debug\net6.0\Tasks.dll
+D:\tasks_epam\ConsoleApp1\Tasks\bin\Debug\net6.0\Tasks.pdb
+D:\tasks_epam\ConsoleApp1\Tasks\obj\Debug\net6.0\Tasks.csproj.AssemblyReference.cache
+D:\tasks_epam\ConsoleApp1\Tasks\obj\Debug\net6.0\Tasks.GeneratedMSBuildEditorConfig.editorconfig
+D:\tasks_epam\ConsoleApp1\Tasks\obj\Debug\net6.0\Tasks.AssemblyInfoInputs.cache
+D:\tasks_epam\ConsoleApp1\Tasks\obj\Debug\net6.0\Tasks.AssemblyInfo.cs
+D:\tasks_epam\ConsoleApp1\Tasks\obj\Debug\net6.0\Tasks.csproj.CoreCompileInputs.cache
+D:\tasks_epam\ConsoleApp1\Tasks\obj\Debug\net6.0\Tasks.dll
+D:\tasks_epam\ConsoleApp1\Tasks\obj\Debug\net6.0\refint\Tasks.dll
+D:\tasks_epam\ConsoleApp1\Tasks\obj\Debug\net6.0\Tasks.pdb
+D:\tasks_epam\ConsoleApp1\Tasks\obj\Debug\net6.0\Tasks.genruntimeconfig.cache
+D:\tasks_epam\ConsoleApp1\Tasks\obj\Debug\net6.0\ref\Tasks.dll
