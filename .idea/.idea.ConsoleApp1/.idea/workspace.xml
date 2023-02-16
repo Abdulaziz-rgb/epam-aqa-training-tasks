@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b927f5b-dfd6-4f59-92a4-87c921d02a2b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Tasks/Tasks.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2JrrqcxaieeR07lqyuC2t6XOVco" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -56,13 +59,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1672847239598</updated>
-      <workItem from="1672847239606" duration="368000" />
+      <workItem from="1672847239606" duration="451000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
