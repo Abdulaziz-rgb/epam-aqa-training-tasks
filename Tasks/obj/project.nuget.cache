@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "gFk+Fo1t9G0jQNuhKzcq9PmTZ6ogWISIeWAE8jrQmvb8rCOyj3U5fj/TjL3Hzm0sYcclq//cL/85bT3Xh2YXBQ==",
+  "dgSpecHash": "y2dPcKsQ6BL9kjvr+2Kel3ltvp2e5GiQ2p9nqho6U7uk0XT/aeGueeArbx916V2BAoIuTGvClnyLvAZ8z1yhYg==",
   "success": true,
   "projectFilePath": "D:\\tasks_epam\\ConsoleApp1\\Tasks\\Tasks.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\abdulaziz\\.nuget\\packages\\microsoft.codecoverage\\17.4.1\\microsoft.codecoverage.17.4.1.nupkg.sha512",
+    "C:\\Users\\abdulaziz\\.nuget\\packages\\microsoft.net.test.sdk\\17.4.1\\microsoft.net.test.sdk.17.4.1.nupkg.sha512",
+    "C:\\Users\\abdulaziz\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.4.1\\microsoft.testplatform.objectmodel.17.4.1.nupkg.sha512",
+    "C:\\Users\\abdulaziz\\.nuget\\packages\\microsoft.testplatform.testhost\\17.4.1\\microsoft.testplatform.testhost.17.4.1.nupkg.sha512",
+    "C:\\Users\\abdulaziz\\.nuget\\packages\\mstest.testadapter\\3.0.2\\mstest.testadapter.3.0.2.nupkg.sha512",
+    "C:\\Users\\abdulaziz\\.nuget\\packages\\mstest.testframework\\3.0.2\\mstest.testframework.3.0.2.nupkg.sha512",
+    "C:\\Users\\abdulaziz\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\abdulaziz\\.nuget\\packages\\nuget.frameworks\\5.11.0\\nuget.frameworks.5.11.0.nupkg.sha512",
+    "C:\\Users\\abdulaziz\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
+  ],
   "logs": []
 }
