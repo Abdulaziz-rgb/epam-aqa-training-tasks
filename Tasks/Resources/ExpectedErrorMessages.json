@@ -1,0 +1,6 @@
+{
+  "error_text_for_wrong_email_address": "Couldn’t sign you in",
+  "error_text_for_empty_email_address": "Enter an email or phone number",
+  "error_text_for_wrong_password": "Wrong password. Try again or click Forgot password to reset it.",
+  "error_text_for_empty_password": "Enter a password"
+}
