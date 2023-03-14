@@ -35,8 +35,6 @@ public class Driver
     
     public static void ScrollToElement(IWebElement element)
     {
-        //var element = GetInstance().FindElement(uniqueLocator);
-        // GetInstance().ExecuteJavaScript("arguments[0].click();", element);
         Actions actions = new Actions(GetInstance());
         actions.MoveToElement(element).Perform();
     }
