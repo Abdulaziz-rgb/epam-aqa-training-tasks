@@ -1,0 +1,6 @@
+{
+  "expected_title": "Gmail",
+  "expected_nickname": "John",
+  "expected_sender_name": "John",
+  "expected_message_to_proton": "New message is sent!"
+}
