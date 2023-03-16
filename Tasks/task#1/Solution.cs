@@ -8,17 +8,21 @@ public static class Solution
         var input = Console.ReadLine();
     
         // Checks the input for null
-        if (input.Length == 0) Console.Write("Value cannot be null. Please re-run the program with correct credential!");
+        if (input.Length == 0)
+        {
+            Console.Write("Value cannot be null. Please re-run the program with correct credential!");
+        }
+        
         FindMaxUnequalConsecutiveChar(input);
     }
 
 //  Function to implement the main logic of the program -> checks the chars for max unequal consecutiveness
     public static void FindMaxUnequalConsecutiveChar(string words)
     {
-        var len = words.Length;
+        var length = words.Length;
         var checkedChars = "";
     
-        for (int i = 0; i < len; i++)
+        for (int i = 0; i < length; i++)
         {
             if (!checkedChars.Contains(words[i]))
             {
