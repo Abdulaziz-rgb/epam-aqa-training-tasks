@@ -11,9 +11,27 @@
     <ItemGroup>
       <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
+      <PackageReference Include="NLog" Version="5.1.2" />
       <PackageReference Include="NUnit" Version="3.13.3" />
       <PackageReference Include="NUnit3TestAdapter" Version="4.3.1" />
       <PackageReference Include="Selenium.WebDriver" Version="4.8.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="TestResults\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="TestResults\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="TestResults\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Log" />
+      <Folder Include="Screenshot" />
     </ItemGroup>
 
 </Project>

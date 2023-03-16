@@ -38,4 +38,13 @@ public class Driver
         Actions actions = new Actions(GetInstance());
         actions.MoveToElement(element).Perform();
     }
+
+    public static void TakeScreenshot()
+    {   
+        var ss = ((ITakesScreenshot)GetInstance()).GetScreenshot();
+        var ssFileName = Path.Combine($"../../../Screenshot/");
+        var timestamp = DateTime.Now.ToString("yy-MM-dd hh-mm-ss").Trim().Replace(' ', '_').Replace('-', '_');
+
+        ss.SaveAsFile($"{ssFileName}_{timestamp}.png", ScreenshotImageFormat.Png);
+    }
 }

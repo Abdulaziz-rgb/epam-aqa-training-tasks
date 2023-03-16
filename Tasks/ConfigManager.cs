@@ -1,4 +1,7 @@
-﻿namespace ConsoleApp1;
+﻿using ConsoleApp1.Logging;
+using NUnit.Framework;
+
+namespace ConsoleApp1;
 
 using System.Text.Json;
 using Models;

@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp1.TestCases;
+﻿using ConsoleApp1.Logging;
+
+namespace ConsoleApp1.TestCases;
 
 using Pages.Gmail;
 using Utils;
@@ -58,6 +60,7 @@ public class LoginToAccountTest : BaseTest
     {
         Driver.Goto(ConfigData.GmailUrl);
         
+        Logger.Instance.Info($"Just a test run for url -> {ConfigData.GmailUrl}");
         var email = GmailCredentials.Mail;
         var expectedErrorText = ErrorData.WrongPassword;
         
@@ -77,6 +80,7 @@ public class LoginToAccountTest : BaseTest
     {
         Driver.Goto(ConfigData.GmailUrl);
         
+        Logger.Instance.Info($"Second log example -> {GmailCredentials.Mail}");
         var email = GmailCredentials.Mail;
         var expectedErrorText = ErrorData.EmptyPassword;
         

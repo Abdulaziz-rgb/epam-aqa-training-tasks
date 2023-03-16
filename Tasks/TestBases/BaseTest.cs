@@ -1,4 +1,6 @@
-﻿using ConsoleApp1.Utils;
+﻿using ConsoleApp1.Logging;
+using ConsoleApp1.Utils;
+using NUnit.Framework.Interfaces;
 
 namespace ConsoleApp1;
 
@@ -66,6 +68,21 @@ public abstract class BaseTest
     [TearDown]
     public void AfterEach()
     {
+        var outcome = TestContext.CurrentContext.Result.Outcome.Status;
+        if (outcome == TestStatus.Passed)
+        {
+            Logger.Instance.Info("Outcome: Passed!");
+        }
+        else if(outcome == TestStatus.Failed)
+        {
+            Driver.TakeScreenshot();
+            Logger.Instance.Info("Test failed");
+        }
+        else
+        {
+            Logger.Instance.Warn("Outcome: " + outcome);
+        }
+        
         Driver.Quit();
     }    
 }
