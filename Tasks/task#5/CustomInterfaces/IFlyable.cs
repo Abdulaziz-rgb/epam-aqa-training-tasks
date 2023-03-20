@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1.task_5.CustomInterfaces;
 
-using ConsoleApp1.task_5.Models;
+using Models;
 
 public interface IFlyable
 {
