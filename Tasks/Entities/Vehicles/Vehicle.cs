@@ -8,7 +8,7 @@ public abstract class Vehicle
     public Chassis Chassis { get; set; }
     public Transmission Transmission { get; set; }
     
-    public Vehicle( string name,Engine engine, Chassis chassis, Transmission transmission)
+    public Vehicle( string name, Engine engine, Chassis chassis, Transmission transmission)
     {
         Id = Guid.NewGuid();
         Name = name;
@@ -17,28 +17,27 @@ public abstract class Vehicle
         Transmission = transmission;
     }
 
-    public void DisplayInfo()
+
+    public virtual void DisplayInfo()
     {
         Console.WriteLine(
-            @"
------------
-Id: {0}
-Name: {1},
+            $@"
+Base virtual method called....
+-----Vehicle Info------
+Id: {Id}
+Name: {Name},
 Engine Details:
-Engine Power: {2} 
-Engine Type: {3}
-Engine Volume: {4}
-Engine Serial Number: {5},
+Engine Power: {Engine.Power} 
+Engine Type: {Engine.Type}
+Engine Volume: {Engine.Volume}
+Engine Serial Number: {Engine.SerialNumber},
 Chassis Details:
-Chassis Number: {6}
-Chassis Permissible Load: {7}
-Chassis Wheels Number: {8},
+Chassis Number: {Chassis.Number}
+Chassis Permissible Load: {Chassis.PermissibleLoad}
+Chassis Wheels Number: {Chassis.WheelsNumber},
 Transmission Details:
-Transmission Manufacturer: {9}
-Transmission Type: {10}
-Transmission Number Of Gears: {11}
-",Id, Name, Engine.Power, Engine.Type, Engine.Volume, Engine.SerialNumber,
-            Chassis.Number, Chassis.PermissibleLoad, Chassis.WheelsNumber, Transmission.Manufacturer,
-            Transmission.Type, Transmission.NumberOfGears);
+Transmission Manufacturer: {Transmission.Manufacturer}
+Transmission Type: {Transmission.Type}
+Transmission Number Of Gears: {Transmission.NumberOfGears}");
     }
 }

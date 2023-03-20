@@ -1,95 +1,31 @@
 ﻿using ConsoleApp1.Entities;
 using ConsoleApp1.Entities.Vehicles;
 
-var PassengerCar = new PassengerCar(
+var passengerCar = new PassengerCar(
         "Passenger car",
-        new Engine
-        {
-            Power = 200,
-            SerialNumber = "8uthg7e",
-            Volume = 1.5,
-            Type = "diesel"
-        },
-        new Chassis
-        {
-            Number = 2,
-            PermissibleLoad = 4000,
-            WheelsNumber = 6,
-        },
-        new Transmission
-        {
-            Manufacturer = "Hyundai",
-            NumberOfGears = 5,
-            Type = "automatic"
-        });
+        new Engine (200,1.5, "diesel","8uthg7e"),
+        new Chassis(2,2,4000),
+        new Transmission("Hyundai", 5, "automatic"));
 
-    var Bus = new Bus(
+    var bus = new Bus(
         "Bus",
-        new Engine
-        {
-            Power = 500,
-            SerialNumber = "c2daqt5",
-            Volume = 1.8,
-            Type = "petrol"
-        },
-        new Chassis
-        {
-            Number = 3,
-            PermissibleLoad = 3000,
-            WheelsNumber = 8,
-        },
-        new Transmission
-        {
-            Manufacturer = "Toyota",
-            NumberOfGears = 5,
-            Type = "manual"
-        });
+        new Engine (500, 1.8,"petrol", "c2daqt5"),
+        new Chassis(8,3,3000),
+        new Transmission("Toyota", 5,"manual"));
 
-    var Truck = new Truck(
+    var truck = new Truck(
         "Truck",
-        new Engine
-        {
-            Power = 800,
-            SerialNumber = "5ht73hs",
-            Volume = 4.0,
-            Type = "diesel"
-        },
-        new Chassis
-        {
-            Number = 4,
-            PermissibleLoad = 6000,
-            WheelsNumber = 6,
-        },
-        new Transmission
-        {
-            Manufacturer = "Man",
-            NumberOfGears = 5,
-            Type = "manual"
-        });
+        new Engine(800, 4.0, "diesel", "5ht73hs"),
+        new Chassis(2,4, 6000),
+        new Transmission ( "Man",5,"manual"));
 
-    var Scooter = new Scooter(
+    var scooter = new Scooter(
         "Scooter",
-        new Engine
-        {
-            Power = 100,
-            SerialNumber = "7gh5hu4",
-            Volume = 1.0,
-            Type = "petrol"
-        },
-        new Chassis
-        {
-            Number = 0,
-            PermissibleLoad = 70,
-            WheelsNumber = 2,
-        },
-        new Transmission
-        {
-            Manufacturer = "BMW",
-            NumberOfGears = 3,
-            Type = "manual"
-        });
+        new Engine(100, 1.0, "petrol", "7gh5hu4"),
+        new Chassis(2, 0, 70),
+        new Transmission ("BMW",3,"manual"));
 
-    var vehicles = new List<Vehicle>() { PassengerCar, Bus, Scooter, Truck };
+var vehicles = new List<Vehicle>() { passengerCar, bus, scooter, truck };
     foreach (var vehicle in vehicles)
     {
         vehicle.DisplayInfo();
