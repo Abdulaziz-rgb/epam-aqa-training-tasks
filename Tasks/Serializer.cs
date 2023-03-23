@@ -1,12 +1,12 @@
 ﻿namespace ConsoleApp1;
 
 using System.Xml.Serialization;
-using ConsoleApp1.Entities.Vehicles;
+using Entities.Vehicles;
 
 
 public static class Serializer
 {
-    public static string ToXML(Vehicle vehicle)
+    public static string ToXml(Vehicle vehicle)
     {
         using(var stringWriter = new StringWriter())
         { 
@@ -15,13 +15,13 @@ public static class Serializer
             return stringWriter.ToString();
         }
     }
-    
+
     public static void GetXmlString(List<Vehicle> vehicles)
     {
         List<string> xmlStringList = new List<string>();
         foreach (var veh in vehicles)
         {
-            xmlStringList.Add(ToXML(veh));
+            xmlStringList.Add(ToXml(veh));
         }
 
         foreach (var xml in xmlStringList)
