@@ -4,9 +4,9 @@ using Models;
 
 public interface IFlyable
 {
-    public Coordinate CurrentPosition { get; set; }
-    public void FlyTo();
-    public void GetFlyTime();
+    void FlyTo(Coordinate newPoint);
+    
+    TimeSpan GetFlyTime(Coordinate newPoint);
 }
 
 // I did not understand the task very well. I tried to complete the task as far as I afford

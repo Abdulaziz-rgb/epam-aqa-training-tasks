@@ -4,15 +4,38 @@ using CustomInterfaces;
 
 public class Bird : IFlyable
 {
-    public Coordinate CurrentPosition { get; set; }
-    
-    public void FlyTo()
+    private Coordinate _currentPoint;
+
+    private double _flySpeed { get; set; } 
+
+    public Bird(Coordinate coordinate)
     {
-        throw new NotImplementedException();
+        _currentPoint = coordinate;
+        _flySpeed = new Random().Next(0, 21);
     }
 
-    public void GetFlyTime()
+    public void FlyTo(Coordinate newPoint)
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"Flying to new point -> ({newPoint.X}, {newPoint.Y}, {newPoint.Z}");
+
+        _currentPoint = newPoint;
+    }
+
+    public TimeSpan GetFlyTime(Coordinate newPoint)
+    {
+        // Distance between current point and a new point
+        double distance = GetDistance(newPoint);
+
+        // Time taken to fly to the distance
+        TimeSpan flyTime = TimeSpan.FromHours(distance / _flySpeed);
+
+        return flyTime;
+    }
+
+    private double GetDistance(Coordinate newPoint)
+    {
+      return Math.Sqrt(Math.Pow((_currentPoint.X - newPoint.X), 2) +
+                        Math.Pow((_currentPoint.Y - newPoint.Y), 2) +
+                        Math.Pow((_currentPoint.Z - newPoint.Z), 2));  
     }
 }

@@ -1,0 +1,92 @@
+﻿```csharp
+using System;
+
+namespace CoordinateInterfaceExample
+{
+    // Coordinate structure to define 3D coordinates of an object
+    public struct Coordinate
+    {
+        public double X { get; set; }
+        public double Y { get; set; }
+        public double Z { get; set; }
+    }
+
+    // Interface for Flying objects
+    public interface IFlyable
+    {
+        void FlyTo(Coordinate newLocation);    // Method to fly the object to a new location
+        double GetFlyTime(Coordinate newLocation);     // Method to calculate the fly time to a new location
+    }
+
+    // Bird class implementing IFlyable interface
+    public class Bird : IFlyable
+    {
+        private Coordinate _currentPosition;
+        private double _flySpeed;
+
+        public Bird(Coordinate currentPosition)
+        {
+            _currentPosition = currentPosition;
+            Random rnd = new Random();
+            _flySpeed = rnd.Next(0, 21);    // Random fly speed between 0-20 km/h
+        }
+
+        public void FlyTo(Coordinate newLocation)
+        {
+            // Calculate the 3D distance between current location and new location
+            double distance = Math.Sqrt(Math.Pow((_currentPosition.X - newLocation.X), 2) +
+                                        Math.Pow((_currentPosition.Y - newLocation.Y), 2) +
+                                        Math.Pow((_currentPosition.Z - newLocation.Z), 2));
+
+            // Calculate the time to fly the distance at the current fly speed
+            double flyTime = distance / _flySpeed;
+
+            Console.WriteLine($"Flying bird to new location ({newLocation.X}, {newLocation.Y}, {newLocation.Z}) " +
+                              $"at a speed of {_flySpeed} km/h. Fly time: {flyTime:F2} hours");
+
+            // Update the current location
+            _currentPosition = newLocation;
+        }
+
+        public double GetFlyTime(Coordinate newLocation)
+        {
+            // Calculate the 3D distance between current location and new location
+            double distance = Math.Sqrt(Math.Pow((_currentPosition.X - newLocation.X), 2) +
+                                        Math.Pow((_currentPosition.Y - newLocation.Y), 2) +
+                                        Math.Pow((_currentPosition.Z - newLocation.Z), 2));
+
+            // Calculate the time to fly the distance at the current fly speed
+            double flyTime = distance / _flySpeed;
+
+            return flyTime;
+        }
+    }
+
+    // Airplane class implementing IFlyable interface
+    public class Airplane : IFlyable
+    {
+        private Coordinate _currentPosition;
+        private double _flySpeed;
+
+        public Airplane(Coordinate currentPosition)
+        {
+            _currentPosition = currentPosition;
+            _flySpeed = 200;    // Initial fly speed of the airplane
+        }
+
+        public void FlyTo(Coordinate newLocation)
+        {
+            // Calculate the 3D distance between current location and new location
+            double distance = Math.Sqrt(Math.Pow((_currentPosition.X - newLocation.X), 2) +
+                                        Math.Pow((_currentPosition.Y - newLocation.Y), 2) +
+                                        Math.Pow((_currentPosition.Z - newLocation.Z), 2));
+
+            // Calculate the time to fly the distance with increasing fly speed
+            double flyTime = 0;
+            while (distance > 0)
+            {
+                double timeToAccelerate = (_flySpeed / 10);    // Time taken to increase speed by 10 km/h
+                double distanceAfterAccelerate = (_flySpeed * timeToAccelerate) + (0.5 * 10 * Math.Pow(timeToAccelerate, 2)); // Distance covered after accelerating
+                double timeTakenToCoverDistanceAfterAccelerating = distanceAfterAccelerate / _flySpeed;    // Time taken to cover the distance after accelerating
+
+                if (distance > distanceAfterAcceler

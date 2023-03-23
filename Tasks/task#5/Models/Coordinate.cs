@@ -4,12 +4,12 @@ namespace ConsoleApp1.task_5.Models;
 
 public struct Coordinate
 {
-    [Range(1, Int32.MaxValue)]
-    public int x;
+    [Range(0, Int32.MaxValue)]
+    public int X;
     
-    [Range(1, Int32.MaxValue)]
-    public int y;
+    [Range(0, Int32.MaxValue)]
+    public int Y;
     
-    [Range(1, Int32.MaxValue)]
-    public int z;
+    [Range(0, Int32.MaxValue)]
+    public int Z;
 }
