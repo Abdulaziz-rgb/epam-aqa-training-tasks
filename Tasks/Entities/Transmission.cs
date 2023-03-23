@@ -9,7 +9,7 @@ public class Transmission
     [Required]
     public string Manufacturer { get; set; }
     
-    [Range(3,6, ErrorMessage = "Invalid value for gears number")]
+    [Required,Range(3,6, ErrorMessage = "Invalid value for gears number")]
     public int NumberOfGears { get; set; }
     
     [Required]

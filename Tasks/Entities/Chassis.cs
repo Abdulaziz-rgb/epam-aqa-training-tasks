@@ -4,7 +4,7 @@ namespace ConsoleApp1.Entities;
 
 public class Chassis
 {
-    [Range(1, Int32.MaxValue, ErrorMessage = "Wheels number cannot be a negative number!")]
+    [Required, Range(1, Int32.MaxValue, ErrorMessage = "Wheels number cannot be a negative number!")]
     public int WheelsNumber { get; set; }
     
     [Required]
