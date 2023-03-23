@@ -8,6 +8,3 @@ public interface IFlyable
     
     TimeSpan GetFlyTime(Coordinate newPoint);
 }
-
-// I did not understand the task very well. I tried to complete the task as far as I afford
-// I hope that the reader understands me :)

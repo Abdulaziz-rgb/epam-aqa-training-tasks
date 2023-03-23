@@ -15,13 +15,14 @@ public class Airplane : IFlyable
     
     public void FlyTo(Coordinate newPoint)
     {
+        // Calculating distance between two points
         double distance = GetDistance(newPoint);
         
         // increase speed by 10 km/h every 10 km
-        int additionalSpeed = (int)(distance / 10) * 10;
+        double additionalSpeed = (distance / 10) * 10;
         _flySpeed += additionalSpeed;
 
-        Console.WriteLine($"Flying from ({_currentPoint.X}, {_currentPoint.Y}, {_currentPoint.Z}) to ({newPoint.X}, {newPoint.Y}, {newPoint.Z}) at a speed of {_flySpeed} km/h.");
+        Console.WriteLine($"Flying from ({_currentPoint.X}, {_currentPoint.Y}, {_currentPoint.Z}) to ({newPoint.X}, {newPoint.Y}, {newPoint.Z}) at a speed of {Math.Round(_flySpeed,2)} km/h.");
         _currentPoint = newPoint;
     }
 
