@@ -1,5 +1,4 @@
-﻿using System.Linq.Expressions;
-using ConsoleApp1.CustomExceptions;
+﻿using ConsoleApp1.CustomExceptions;
 using ConsoleApp1.Entities;
 using ConsoleApp1.Entities.Vehicles;
 
