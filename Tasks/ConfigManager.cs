@@ -1,5 +1,4 @@
-﻿using ConsoleApp1.Logging;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace ConsoleApp1;
 

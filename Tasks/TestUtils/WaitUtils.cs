@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1.Utils;
+﻿namespace ConsoleApp1.TestUtils;
 
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;

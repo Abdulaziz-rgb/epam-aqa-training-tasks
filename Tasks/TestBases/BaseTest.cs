@@ -1,13 +1,12 @@
-﻿using ConsoleApp1.Logging;
-using ConsoleApp1.Utils;
-using NUnit.Framework.Interfaces;
-
-namespace ConsoleApp1;
+﻿namespace ConsoleApp1.TestBases;
 
 using Models;
 using Pages.Gmail;
 using Pages.Proton;
+using TestUtils;
+
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 public abstract class BaseTest
 {

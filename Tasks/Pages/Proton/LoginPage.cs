@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1.Pages.Proton;
 
-using Utils;
+using TestUtils;
 using OpenQA.Selenium;
 
 public class LoginPage

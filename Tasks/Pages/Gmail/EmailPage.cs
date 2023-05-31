@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp1.Pages.Gmail;
 
-using Utils;
+using TestUtils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;

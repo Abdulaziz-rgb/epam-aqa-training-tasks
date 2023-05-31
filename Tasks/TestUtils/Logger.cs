@@ -1,17 +1,15 @@
-﻿using NLog;
+﻿namespace ConsoleApp1.TestUtils;
+
+using NLog;
 using NLog.Config;
-using NLog.Layouts;
 using NLog.Targets;
 using NUnit.Framework;
-
-namespace ConsoleApp1.Logging;
 
 public sealed class Logger
 {
     private static readonly Lazy<Logger> LazyInstance = new(() => new Logger());
 
     private readonly ILogger _log = LogManager.GetLogger(Thread.CurrentThread.ManagedThreadId.ToString());
-    
 
     private Logger()
     {

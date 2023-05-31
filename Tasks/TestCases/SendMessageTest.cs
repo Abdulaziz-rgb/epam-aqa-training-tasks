@@ -1,6 +1,8 @@
-﻿namespace ConsoleApp1.TestCases;
+﻿using ConsoleApp1.TestBases;
+using ConsoleApp1.TestUtils;
 
-using Utils;
+namespace ConsoleApp1.TestCases;
+
 using NUnit.Framework;
 
 [TestFixture]

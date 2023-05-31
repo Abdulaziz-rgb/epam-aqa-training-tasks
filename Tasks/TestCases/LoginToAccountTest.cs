@@ -1,9 +1,9 @@
-﻿using ConsoleApp1.Logging;
+﻿using ConsoleApp1.TestBases;
+using ConsoleApp1.TestUtils;
 
 namespace ConsoleApp1.TestCases;
 
 using Pages.Gmail;
-using Utils;
 using NUnit.Framework;
 
 
