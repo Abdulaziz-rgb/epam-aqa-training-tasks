@@ -1,7 +1,6 @@
-﻿using ConsoleApp1.Utils;
+﻿namespace ConsoleApp1;
 
-namespace ConsoleApp1;
-
+using Utils;
 using Models;
 using Pages.Gmail;
 using Pages.Proton;
@@ -64,8 +63,5 @@ public abstract class BaseTest
     }
 
     [TearDown]
-    public void AfterEach()
-    {
-        Driver.Quit();
-    }    
+    public void AfterEach() => Driver.Quit();
 }

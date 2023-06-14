@@ -5,28 +5,23 @@ using OpenQA.Selenium.Interactions;
 
 public class Driver
 {
-    private static IWebDriver _driver;
+    private static IWebDriver _Driver;
     
-    private Driver()
-    {
-    }
+    private Driver() { }
 
     public static IWebDriver GetInstance()
     {
-        if (_driver == null)
+        if (_Driver == null)
         {
-            _driver = DriverFactory.Build(ConfigManager._configData.Browser);
-            _driver.Manage().Window.Maximize();
+            _Driver = DriverFactory.Build(ConfigManager._configData.Browser);
+            _Driver.Manage().Window.Maximize();
         }
 
-        return _driver;
+        return _Driver;
     }
 
-    public static void Goto(string url)
-    {
-        GetInstance().Navigate().GoToUrl(url);
-    }
-    
+    public static void Goto(string url) => GetInstance().Navigate().GoToUrl(url);
+
     public static void Quit()
     {
         GetInstance().Quit();

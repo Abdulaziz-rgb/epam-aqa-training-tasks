@@ -8,9 +8,7 @@ public static class WaitUtils
 {
     public static WebDriverWait Wait = new(Driver.GetInstance(), TimeSpan.FromSeconds(35));
 
-    static WaitUtils()
-    {
-    }
+    static WaitUtils() { }
 
     public static void WaitForElementVisibility(By uniqueLocator)
     {
