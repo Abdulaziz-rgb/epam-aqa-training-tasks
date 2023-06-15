@@ -62,6 +62,6 @@ public abstract class BaseTest
         ProtonMainPage = new ProtonMainPage();
     }
 
-    [TearDown]
-    public void AfterEach() => Driver.Quit();
+    // [TearDown]
+    // public void AfterEach() => Driver.Quit();
 }

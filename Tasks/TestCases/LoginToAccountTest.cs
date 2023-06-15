@@ -87,6 +87,6 @@ public class LoginToAccountTest : BaseTest
         PasswordPage.EnterPasswordNextButton();
 
         var actualErrorText = PasswordPage.GetErrorText();
-        Assert.AreEqual(expectedErrorText, actualErrorText, "You did not enter emoty password credentials!");
+        Assert.AreEqual(expectedErrorText, actualErrorText, "You did not enter empty password credentials!");
     }
 }

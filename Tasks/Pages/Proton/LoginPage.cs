@@ -5,16 +5,24 @@ using OpenQA.Selenium;
 
 public class LoginPage
 {
-    public IWebElement EmailField => Driver.GetInstance().FindElement(By.Id("username"));
-
+    public IWebElement SignInLink => Driver.GetInstance().FindElement(By.ClassName("zlogin-apps"));
+    public IWebElement EmailField => Driver.GetInstance().FindElement(By.Id("login_id"));
     public IWebElement PasswordField => Driver.GetInstance().FindElement(By.Id("password"));
-
-    public IWebElement SignInButton => Driver.GetInstance().FindElement(By.XPath("//button[@type='submit']"));
-
+    public IWebElement SignInButton => Driver.GetInstance().FindElement(By.XPath("//button/span[text()='Sign in']"));
+    
+    //public IWebElement NextButton = Driver.GetInstance().FindElement(By.XPath("//button/span[text()='Next']"));
+    public void ClickSignInLink()
+    {
+        SignInLink.Click();
+    }
     public void EnterEmail(string email)
     {
-        WaitUtils.WaitForElementVisibility(By.Id("username"));
+        var nextBtn = Driver.GetInstance().FindElement(By.XPath("//button/span[text()='Next']"));
+        
+        WaitUtils.WaitForElementVisibility(By.Id("login_id"));
+        EmailField.Clear();
         EmailField.SendKeys(email);
+        nextBtn.Click();
     }
 
     public void EnterPassword(string password)
@@ -23,7 +31,7 @@ public class LoginPage
         PasswordField.SendKeys(password);
     }
 
-    public void ClickSignIn()
+    public void ClickSignInButton()
     {
         SignInButton.Click();
     }

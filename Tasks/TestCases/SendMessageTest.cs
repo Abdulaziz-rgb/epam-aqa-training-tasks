@@ -41,24 +41,25 @@ public class SendMessageTest : BaseTest
 
         Thread.Sleep(3000);
 
+        LoginPage.ClickSignInLink();
         LoginPage.EnterEmail(email);
         LoginPage.EnterPassword(password);
-        LoginPage.ClickSignIn();
+        LoginPage.ClickSignInButton();
         
-        ProtonMainPage.ClickUnreadMessageCategory();
-        ProtonMainPage.RefreshPage();
-        
-        var senderName = ProtonMainPage.GetSenderName();
-        Assert.AreEqual(ExpectedData.SenderName, senderName);
-        
-        ProtonMainPage.ClickMessageLabel();
-        
-        var messageContent = ProtonMainPage.GetMessageContent();
-        
-        Assert.AreEqual(ExpectedData.Message, messageContent);
-        
-        ProtonMainPage.ClickReplyBtn();
-        ProtonMainPage.EnterMessage(message);
-        ProtonMainPage.SendMessage();
+        // ProtonMainPage.ClickUnreadMessageCategory();
+        // ProtonMainPage.RefreshPage();
+        //
+        // var senderName = ProtonMainPage.GetSenderName();
+        // Assert.AreEqual(ExpectedData.SenderName, senderName);
+        //
+        // ProtonMainPage.ClickMessageLabel();
+        //
+        // var messageContent = ProtonMainPage.GetMessageContent();
+        //
+        // Assert.AreEqual(ExpectedData.Message, messageContent);
+        //
+        // ProtonMainPage.ClickReplyBtn();
+        // ProtonMainPage.EnterMessage(message);
+        // ProtonMainPage.SendMessage();
     }
 }

@@ -1,8 +1,9 @@
 {
   "browser": "chrome",
   "gmail_url": "https://gmail.com/",
-  "proton_url": "https://account.proton.me/login",
+  "proton_url": "https://www.zoho.com/mail/login.html",
   "new_nickname": "John",
   "message_from_gmail": "New message is sent!",
   "message_from_proton": "This is a back message to server one"
 }
+
