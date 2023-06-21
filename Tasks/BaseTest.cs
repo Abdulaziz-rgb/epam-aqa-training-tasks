@@ -5,6 +5,7 @@ using Models;
 using Pages.Gmail;
 using Pages.Proton;
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 public abstract class BaseTest
 {
@@ -61,6 +62,24 @@ public abstract class BaseTest
         ProtonMainPage = new ProtonMainPage();
     }
 
-    // [TearDown]
-    // public void AfterEach() => Driver.Quit();
+    [TearDown]
+    public void AfterEach()
+    {
+        var outcome = TestContext.CurrentContext.Result.Outcome.Status;
+        if (outcome == TestStatus.Passed)
+        {
+            Logger.Instance.Info("Outcome: Passed!");
+        }
+        else if(outcome == TestStatus.Failed)
+        {
+            Driver.TakeScreenshot();
+            Logger.Instance.Info("Test failed");
+        }
+        else
+        {
+            Logger.Instance.Warn("Outcome: " + outcome);
+        }
+        
+        Driver.Quit();
+    }
 }

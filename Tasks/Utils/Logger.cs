@@ -31,12 +31,12 @@ public sealed class Logger
         LogLevel debug = LogLevel.Debug;
         LogLevel fatal2 = LogLevel.Fatal;
         FileTarget fileTarget = new FileTarget("logfile");
-        fileTarget.DeleteOldFileOnStartup = true;
+        fileTarget.DeleteOldFileOnStartup = false;
 
         var testName = TestContext.CurrentContext.Test.Name;
         var testId = TestContext.CurrentContext.Test.ID;
         
-        fileTarget.FileName = $"../../../Log/log.log";
+        fileTarget.FileName = @$"../../../Log/{testName}_{testId}.log";
         fileTarget.Layout = str;
         configuration.AddRule(debug, fatal2, fileTarget);
         return configuration;

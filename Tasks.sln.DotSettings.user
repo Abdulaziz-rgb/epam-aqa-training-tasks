@@ -2,6 +2,7 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0cc52af9_002D77a6_002D49ef_002D8d34_002D5a24e57ca1a7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="LoginWithCorrectCredentialsTest #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithCorrectCredentialsTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithEmptyPasswordTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3760640a_002D0945_002D4878_002Da52d_002D96a53256d1ae/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="LoginWithCorrectCredentialsTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
