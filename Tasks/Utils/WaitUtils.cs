@@ -6,17 +6,19 @@ using SeleniumExtras.WaitHelpers;
 
 public static class WaitUtils
 {
-    public static WebDriverWait Wait = new(Driver.GetInstance(), TimeSpan.FromSeconds(35));
+    public static WebDriverWait Wait = new(Driver.GetInstance(), TimeSpan.FromSeconds(40));
 
     static WaitUtils() { }
-
-    public static void WaitForElementVisibility(By uniqueLocator)
-    {
+    
+    public static void WaitForElementVisibility(By uniqueLocator) => 
         Wait.Until(ExpectedConditions.ElementIsVisible(uniqueLocator));
-    }
 
-    public static void WaitForElementToBeClickable(By uniqueLocator)
-    {
+    public static void WaitForElementToBeClickable(By uniqueLocator) => 
         Wait.Until(ExpectedConditions.ElementToBeClickable(uniqueLocator));
+
+    public static void WaitUntilPageIsFullyLoaded()
+    {
+        Wait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
     }
+    
 }

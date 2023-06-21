@@ -10,7 +10,6 @@ public class LoginPage
     public IWebElement PasswordField => Driver.GetInstance().FindElement(By.Id("password"));
     public IWebElement SignInButton => Driver.GetInstance().FindElement(By.XPath("//button/span[text()='Sign in']"));
     
-    //public IWebElement NextButton = Driver.GetInstance().FindElement(By.XPath("//button/span[text()='Next']"));
     public void ClickSignInLink()
     {
         SignInLink.Click();

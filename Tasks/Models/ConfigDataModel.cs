@@ -21,4 +21,7 @@ public class ConfigDataModel
     
     [JsonPropertyName("message_from_proton")]
     public string MessageFromProton { get; set; }
+    
+    [JsonPropertyName("message_subject_from_gmail")]
+    public string MessageSubjectFromGmail { get; set; }
 }

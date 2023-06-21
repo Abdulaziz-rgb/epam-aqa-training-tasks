@@ -42,7 +42,6 @@ public abstract class BaseTest
         ProtonCredentials = UserData[1];
     }
     
-
     [SetUp]
     public void BeforeEach()
     {
@@ -57,7 +56,7 @@ public abstract class BaseTest
         SettingsPage = new SettingsPage();
         MessagingPage = new MessagingPage();
         
-        // Proton Pages
+        // Zoho Pages
         LoginPage = new LoginPage();
         ProtonMainPage = new ProtonMainPage();
     }

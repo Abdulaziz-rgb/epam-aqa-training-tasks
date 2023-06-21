@@ -5,30 +5,43 @@ using OpenQA.Selenium;
 
 public class SettingsPage
 {
-    public IWebElement AccountsLink => Driver.GetInstance().FindElements(By.XPath("//a[@class='f0 LJOhwe']"))[1];
+    // Declaring locators
+    public By AccountsLinkLocator => By.XPath("//div[@class='f1']/a[contains(@href,'accounts')]");
 
-    public IWebElement EditButton => Driver.GetInstance().FindElements(By.CssSelector(".qy.CY"))[1];
+    public By EditButtonLocator => By.XPath("//span[text()='edit info']");
 
-    public IWebElement EditBoxInput => Driver.GetInstance().FindElement(By.Id("cfn"));
+    public By EditBoxInputLocator => By.Id("cfn");
 
-    public IWebElement SaveButton => Driver.GetInstance().FindElement(By.Id("bttn_sub"));
+    public By SaveButtonLocator => By.Id("bttn_sub");
 
-    public IWebElement NamePlace => Driver.GetInstance().FindElement(By.XPath("//td/div[@class='rc']"));
+    public By NamePlaceLocator => By.XPath("//td/div[@class='rc']");
     
+    // Declaring elements
+    public IWebElement AccountsLink => Driver.GetInstance().FindElement(AccountsLinkLocator);
+
+    public IWebElement EditButton => Driver.GetInstance().FindElement(EditButtonLocator);
+
+    public IWebElement EditBoxInput => Driver.GetInstance().FindElement(EditBoxInputLocator);
+
+    public IWebElement SaveButton => Driver.GetInstance().FindElement(SaveButtonLocator);
+
+    public IWebElement NamePlace => Driver.GetInstance().FindElement(NamePlaceLocator);
+    
+    // Declaring page methods
     public void ClickAccountLink()
     {
-        WaitUtils.WaitForElementVisibility(By.XPath("//a[@class='f0 LJOhwe']"));
+        WaitUtils.WaitForElementVisibility(AccountsLinkLocator);
         AccountsLink.Click();
     }
 
     public void ClickEditButton()
     {
-        WaitUtils.WaitForElementVisibility(By.CssSelector(".qy.CY"));
-        WaitUtils.WaitForElementToBeClickable(By.CssSelector(".qy.CY"));
+        WaitUtils.WaitForElementVisibility(EditButtonLocator);
+        WaitUtils.WaitForElementToBeClickable(EditButtonLocator);
         EditButton.Click();
     }
 
-    public void EnterNewNick(string newNickname)
+    public void EnterNewNickAndSave(string newNickname)
     {
         var tabs = Driver.GetInstance().WindowHandles;
         Driver.GetInstance().SwitchTo().Window(tabs[1]);

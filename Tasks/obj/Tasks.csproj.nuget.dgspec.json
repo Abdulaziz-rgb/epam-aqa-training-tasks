@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[17.4.1, )"
             },
+            "NLog": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
             "NUnit": {
               "target": "Package",
               "version": "[3.13.3, )"

@@ -1,6 +1,6 @@
 {
-  "expected_title": "Gmail",
+  "expected_title": "Inbox - abdusattorabilov@gmail.com - Gmail",
   "expected_nickname": "John",
-  "expected_sender_name": "John",
-  "expected_message_to_proton": "New message is sent!"
+  "expected_sender_name": "abdusattorabilov",
+  "expected_message_to_proton": "Test Scenario 2 Case"
 }

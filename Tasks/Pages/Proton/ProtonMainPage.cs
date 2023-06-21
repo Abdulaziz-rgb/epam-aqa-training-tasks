@@ -5,90 +5,85 @@ using OpenQA.Selenium;
 
 public class ProtonMainPage
 {
-    public IWebElement UnreadMessagesBtn => 
-        Driver.GetInstance().FindElement(By.XPath("//div/button[contains(@data-testid, 'unread')]"));
-
-    public IWebElement RefreshButton => 
-        Driver.GetInstance().FindElement(By.XPath("//*[local-name()='svg' and contains(@data-testid,'refresh')]"));
-
-    public string SenderName =>
-        Driver.GetInstance().FindElement(By.XPath("//span[contains(@data-testid, 'sender')]")).Text;
-
-    public IWebElement TargetMessageLabel => 
-        Driver.GetInstance().FindElement(By.XPath("//div[contains(@class, 'unread')]"));
-
-    public IWebElement MessageContentFrame =>
-        Driver.GetInstance().FindElement(By.XPath("//iframe[@data-testid='content-iframe']"));
+    public IWebElement UnreadMessagesLabel => Driver.GetInstance().FindElement(By.Id("zm_unread"));
     
-    public IWebElement MessageContent => 
-        Driver.GetInstance().FindElement(By.XPath("//div[@dir='ltr']"));
+    public IWebElement SenderMail =>
+        Driver.GetInstance().FindElement(By.XPath("//span[contains(@class, 'zmLSender')]"));
 
+    public IWebElement MessageBoxLabel => Driver.GetInstance().FindElement(By.XPath("//div[contains(@class, 'SC_mclst zmLClassic')]/child::div[1]"));
+    
+    public IWebElement SenderMessage =>
+        Driver.GetInstance().FindElement(By.XPath("//span[contains(@class, 'zmLSub')]"));
+    
     public IWebElement ReplyBtn =>
-        Driver.GetInstance().FindElement(By.XPath("//button[contains(@data-testid, 'reply')]"));
+        Driver.GetInstance().FindElement(By.XPath("//span[text()='Reply']"));
     
     public IWebElement MessageComposerFrame => 
-        Driver.GetInstance().FindElement(By.XPath("//iframe[@title='Email composer']"));
+        Driver.GetInstance().FindElement(By.XPath("//iframe[@class='ze_area']"));
+    //div[@class='ze']/iframe
     
     public IWebElement MessageBox => 
-        Driver.GetInstance().FindElement(By.XPath("//div[@id='rooster-editor']"));
+        Driver.GetInstance().FindElement(By.XPath("//body[@class='ze_body']/child::div[1]"));
     
-    public IWebElement SendMessageBtn =>
-        Driver.GetInstance().FindElement(By.XPath("//button[contains(@class, 'send-button')]"));
+    public IWebElement TextArea => 
+        Driver.GetInstance().FindElement(By.XPath("//div[@id='Zm-_Id_-Sgn']//span"));
     
-    
-    public void ClickUnreadMessageCategory()
-    {
-        WaitUtils.WaitForElementToBeClickable(By.XPath("//div/button[contains(@data-testid, 'unread')]"));
-        UnreadMessagesBtn.Click();
-    }
+    public IWebElement SendButton =>
+        Driver.GetInstance().FindElement(By.XPath("//div[@class='zmCRBlk']//span[text()='Send']"));
 
-    public void RefreshPage()
+    public void ClickUnreadMessagesLabel()
     {
-        WaitUtils.WaitForElementToBeClickable(By.XPath("//*[local-name()='svg' and contains(@data-testid,'refresh')]"));
-        RefreshButton.Click();
+        WaitUtils.WaitForElementToBeClickable(By.Id("zm_unread"));
+        UnreadMessagesLabel.Click();
     }
-
+    
+    public void ClickMessageLabelBox()
+    {
+        WaitUtils.WaitForElementToBeClickable(By.XPath("//div[contains(@class, 'SC_mclst zmLClassic')]/child::div[1]"));
+        MessageBoxLabel.Click();
+    }
+    
     public string GetSenderName()
     {
-        WaitUtils.WaitForElementVisibility(By.XPath("//span[contains(@data-testid, 'sender')]"));
-        return SenderName;
+        WaitUtils.WaitForElementVisibility(By.XPath("//span[contains(@class, 'zmLSender')]"));
+        return SenderMail.Text.Split('@')[0];
     }
-
-    public void ClickMessageLabel()
-    {
-        WaitUtils.WaitForElementToBeClickable(By.XPath("//div[contains(@class, 'unread')]"));
-       TargetMessageLabel.Click(); 
-    }
-
+    
     public string GetMessageContent()
     {
-        WaitUtils.WaitForElementVisibility(By.XPath("//iframe[@data-testid='content-iframe']"));
-        Driver.GetInstance().SwitchTo().Frame(MessageContentFrame);
-        var content = MessageContent.Text;
-        Driver.GetInstance().SwitchTo().DefaultContent();
-        
+        WaitUtils.WaitForElementVisibility(By.XPath("//span[contains(@class, 'zmLSub')]"));
+        var content = SenderMessage.Text;
+
         return content;
     }
 
     public void ClickReplyBtn()
     {
-        WaitUtils.WaitForElementToBeClickable(By.XPath("//button[contains(@data-testid, 'reply')]"));
+        WaitUtils.WaitForElementToBeClickable(By.XPath("//span[text()='Reply']"));
         ReplyBtn.Click();
     }
 
-    public void EnterMessage(string message)
+    public void DeleteAutoMessage()
+    {
+        WaitUtils.WaitForElementVisibility(By.XPath("//div[@id='Zm-_Id_-Sgn']//span"));
+        TextArea.Click();
+        TextArea.SendKeys(Keys.Control + 'a');
+        TextArea.SendKeys(Keys.Backspace);
+        TextArea.SendKeys("This is a test message!!");
+    }
+    
+    public void EnterMessage()
     {
         Driver.GetInstance().SwitchTo().Frame(MessageComposerFrame);
         
-        MessageBox.Clear();
         MessageBox.SendKeys("This is a back message to server one");
         
-        Driver.GetInstance().SwitchTo().ParentFrame();
+        Driver.GetInstance().SwitchTo().DefaultContent();
     }
 
     public void SendMessage()
     {
-        WaitUtils.WaitForElementToBeClickable(By.XPath("//button[contains(@class, 'send-button')]"));
-        SendMessageBtn.Click();
+        WaitUtils.WaitForElementToBeClickable(By.XPath("//div[@class='zmCRBlk']//span[text()='Send']"));
+        SendButton.Click();
     }
 }

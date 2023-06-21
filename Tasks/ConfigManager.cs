@@ -6,13 +6,13 @@ using Models;
 public static class ConfigManager
 {
     private static readonly string WorkspaceDirectoryJson = Path.GetFullPath(@"../../../Resources");
-
+    
     public static List<UserDataModel> _userData;
 
     public static ErrorDataModel _errorData;
 
     public static ConfigDataModel _configData;
-
+    
     public static ExpectedDataModel _expectedData;
 
     public static List<UserDataModel> SetUserData()
@@ -61,5 +61,16 @@ public static class ConfigManager
         }
 
         return _expectedData;
+    }
+    
+    // Generic class that reads the corresponding json and deserializes it into corresponding model
+    // <input>Filepath name</input>
+    //TODO Move the logics above to generic function thant handles the logic equally
+    public static T SetData<T>(string filePath) where T : class
+    {
+        var fullPath = WorkspaceDirectoryJson + $"\\{filePath}";
+        var jsonStr = File.ReadAllText(fullPath);
+    
+        return JsonSerializer.Deserialize<T>(jsonStr);
     }
 }

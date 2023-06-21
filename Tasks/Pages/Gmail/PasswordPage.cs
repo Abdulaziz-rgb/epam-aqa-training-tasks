@@ -5,34 +5,44 @@ using OpenQA.Selenium;
 
 public class PasswordPage
 {
-    public IWebElement PasswordField => Driver.GetInstance().FindElement(By.Name("Passwd"));
-    
-    public IWebElement PasswordNextButton => Driver.GetInstance().FindElement(By.XPath("//span[contains(text(), 'Next')]"));
+    // Declaring locators
+    public By PasswordFieldLocator => By.Name("Passwd");
 
+    public By PasswordNextBtnLocator => By.XPath("//span[contains(text(), 'Next')]");
+
+    public By ErrorTextFieldLocator => By.XPath("//div[@jsname='B34EJ']");
+    
+    // Declaring elements
+    public IWebElement PasswordField => Driver.GetInstance().FindElement(PasswordFieldLocator);
+    
+    public IWebElement PasswordNextButton => Driver.GetInstance().FindElement(PasswordNextBtnLocator);
+
+    public IWebElement ErrorTextField => Driver.GetInstance().FindElement(ErrorTextFieldLocator);
+    
+    // Declaring page methods
     public void EnterPassword(string password)
     {
-        WaitUtils.WaitForElementVisibility(By.Name("Passwd"));
+        WaitUtils.WaitForElementVisibility(PasswordFieldLocator);
         PasswordField.Click();
         PasswordField.SendKeys(password);
     }
 
-    public void EnterPasswordNextButton()
+    public void ClickNextButton()
     {
-        WaitUtils.WaitForElementToBeClickable(By.XPath("//span[contains(text(), 'Next')]"));
+        WaitUtils.WaitForElementToBeClickable(PasswordNextBtnLocator);
         PasswordNextButton.Click();
     }
 
-    public static string GetTitle()
+    public string GetTitle()
     {
-        var title = Driver.GetInstance().Title.Split(" - ")[2];
-        return title;
+        Thread.Sleep(1000);
+        return Driver.GetInstance().Title;
     }
 
-    public string GetErrorText()
+    public string GetErrorMessage()
     {
-        WaitUtils.WaitForElementVisibility(By.XPath("//div[@jsname='B34EJ']"));
-        var errorText = Driver.GetInstance().FindElement(By.XPath("//div[@jsname='B34EJ']")).Text;
+        WaitUtils.WaitForElementVisibility(ErrorTextFieldLocator);
         
-        return errorText;
+        return ErrorTextField.Text;
     }
 }

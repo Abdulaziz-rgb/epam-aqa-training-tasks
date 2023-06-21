@@ -7,32 +7,38 @@ using SeleniumExtras.WaitHelpers;
 
 public class EmailPage
 {
-    public IWebElement EmailField => Driver.GetInstance().FindElement(By.XPath("//input[@type='email']"));
+    // Declaring locators
+    public By EmailFieldLocator => By.XPath("//input[@type='email']");
+
+    public By EmailNextBtnLocator => By.XPath("//span[contains(text(), 'Next')]");
+
+    public By WrongAddressErrorTextLocator => By.XPath("//span[text()='Couldn’t sign you in']");
+
+    public By EmptyAddressErrorTextLocator => By.XPath("//div[contains(@class, 'o6cuMc Jj6Lae')]");
     
-    public IWebElement EmailNextButton => Driver.GetInstance().FindElement(By.XPath("//span[contains(text(), 'Next')]"));
+    // Declaring elements
+    public IWebElement EmailInputField => Driver.GetInstance().FindElement(EmailFieldLocator);
     
+    public IWebElement EmailNextButton => Driver.GetInstance().FindElement(EmailNextBtnLocator);
+
+    public IWebElement WrongAddressErrorTextField => Driver.GetInstance().FindElement(WrongAddressErrorTextLocator);
+    
+    public IWebElement EmptyAddressErrorTextField => Driver.GetInstance().FindElement(EmptyAddressErrorTextLocator);
+   
+    // Declaring page methods
     public void EnterEmail(string mail)
     {
-        EmailField.Click();
-        EmailField.SendKeys(mail);
+        EmailInputField.Click();
+        EmailInputField.SendKeys(mail);
     }
 
-    public void EnterEmailNextButton()
-    {
-        EmailNextButton.Click();
-        Thread.Sleep(2000);
-    }
+    public void EnterEmailNextButton() => EmailNextButton.Click();
 
     public string GetErrorTextForWrongAddress()
     {
-        var wait = new WebDriverWait(Driver.GetInstance(), TimeSpan.FromSeconds(10));
-        var errorText = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Couldn’t sign you in']"))).Text;
-        return errorText;
+        WaitUtils.WaitForElementVisibility(WrongAddressErrorTextLocator);
+        return WrongAddressErrorTextField.Text;
     }
 
-    public string GetErrorTextForEmptyAddress()
-    {
-        var element = Driver.GetInstance().FindElement(By.XPath("//div[contains(@class, 'o6cuMc Jj6Lae')]")).Text;
-        return element;
-    }
+    public string GetErrorTextForEmptyAddress() => EmptyAddressErrorTextField.Text;
 }
