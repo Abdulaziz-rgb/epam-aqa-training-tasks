@@ -63,9 +63,8 @@ public static class ConfigManager
         return _expectedData;
     }
     
-    // Generic class that reads the corresponding json and deserializes it into corresponding model
-    // <input>Filepath name</input>
     //TODO Move the logics above to generic function thant handles the logic equally
+    // Added here for later use as it breaks the test cases when used now!!!
     public static T SetData<T>(string filePath) where T : class
     {
         var fullPath = WorkspaceDirectoryJson + $"\\{filePath}";

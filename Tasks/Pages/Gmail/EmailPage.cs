@@ -9,12 +9,13 @@ public class EmailPage
 {
     // Declaring locators
     public By EmailFieldLocator => By.XPath("//input[@type='email']");
+    
+    public By EmailNextBtnLocator => By.XPath("//div[contains(@id, 'Next')]");
 
-    public By EmailNextBtnLocator => By.XPath("//span[contains(text(), 'Next')]");
-
-    public By WrongAddressErrorTextLocator => By.XPath("//span[text()='Couldn’t sign you in']");
-
-    public By EmptyAddressErrorTextLocator => By.XPath("//div[contains(@class, 'o6cuMc Jj6Lae')]");
+    // changed -> //h1[@id='headingText']/span, but the test failed to run
+    public By WrongAddressErrorTextLocator => By.XPath("//h1[@id='headingText']/span");
+    
+    public By EmptyAddressErrorTextLocator => By.XPath("//div[contains(@class, 'Jj6Lae')]");
     
     // Declaring elements
     public IWebElement EmailInputField => Driver.GetInstance().FindElement(EmailFieldLocator);
@@ -32,13 +33,15 @@ public class EmailPage
         EmailInputField.SendKeys(mail);
     }
 
-    public void EnterEmailNextButton() => EmailNextButton.Click();
-
     public string GetErrorTextForWrongAddress()
     {
         WaitUtils.WaitForElementVisibility(WrongAddressErrorTextLocator);
-        return WrongAddressErrorTextField.Text;
+        return WrongAddressErrorTextField.Text;  
     }
 
-    public string GetErrorTextForEmptyAddress() => EmptyAddressErrorTextField.Text;
+    public string GetErrorTextForEmptyAddress()
+    {
+        WaitUtils.WaitForElementVisibility(EmptyAddressErrorTextLocator);
+        return EmptyAddressErrorTextField.Text;
+    }
 }

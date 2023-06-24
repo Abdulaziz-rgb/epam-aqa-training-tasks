@@ -11,6 +11,8 @@ public class PasswordPage
     public By PasswordNextBtnLocator => By.XPath("//span[contains(text(), 'Next')]");
 
     public By ErrorTextFieldLocator => By.XPath("//div[@jsname='B34EJ']");
+
+    public By SearchFieldLocator => By.XPath("//form[@role='search']");
     
     // Declaring elements
     public IWebElement PasswordField => Driver.GetInstance().FindElement(PasswordFieldLocator);
@@ -27,22 +29,15 @@ public class PasswordPage
         PasswordField.SendKeys(password);
     }
 
-    public void ClickNextButton()
-    {
-        WaitUtils.WaitForElementToBeClickable(PasswordNextBtnLocator);
-        PasswordNextButton.Click();
-    }
-
     public string GetTitle()
     {
-        Thread.Sleep(1000);
+        WaitUtils.WaitForElementToBeClickable(SearchFieldLocator);
         return Driver.GetInstance().Title;
     }
 
     public string GetErrorMessage()
     {
         WaitUtils.WaitForElementVisibility(ErrorTextFieldLocator);
-        
         return ErrorTextField.Text;
     }
 }

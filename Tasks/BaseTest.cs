@@ -3,7 +3,6 @@
 using Utils;
 using Models;
 using Pages.Gmail;
-using Pages.Proton;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 
@@ -18,11 +17,7 @@ public abstract class BaseTest
     public static SettingsPage SettingsPage;
 
     public static MessagingPage MessagingPage;
-
-    public static LoginPage LoginPage;
-
-    public static ProtonMainPage ProtonMainPage;
-
+    
     public static List<UserDataModel> UserData;
 
     public static ErrorDataModel ErrorData;
@@ -56,10 +51,6 @@ public abstract class BaseTest
         MainPage = new MainPage();
         SettingsPage = new SettingsPage();
         MessagingPage = new MessagingPage();
-        
-        // Zoho Pages
-        LoginPage = new LoginPage();
-        ProtonMainPage = new ProtonMainPage();
     }
 
     [TearDown]
@@ -73,7 +64,7 @@ public abstract class BaseTest
         else if(outcome == TestStatus.Failed)
         {
             Driver.TakeScreenshot();
-            Logger.Instance.Info("Test failed");
+            Logger.Instance.Error("Test failed");
         }
         else
         {

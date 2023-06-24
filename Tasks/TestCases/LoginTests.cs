@@ -7,15 +7,16 @@ using NUnit.Framework;
 public class LoginTests : BaseTest
 {
     [Test]
+    [Category("LoginWithCorrectCredentials")]
     public void LoginWithCorrectCredentialsTest()
     {
         Driver.Goto(ConfigData.GmailUrl);
         
         EmailPage.EnterEmail(GmailCredentials.Mail);
-        EmailPage.EnterEmailNextButton();
+        EmailPage.EmailNextButton.Click();
         
         PasswordPage.EnterPassword(GmailCredentials.Password);
-        PasswordPage.ClickNextButton();
+        PasswordPage.PasswordNextButton.Click();
         
         Assert.AreEqual(ExpectedData.Title, PasswordPage.GetTitle(), "The title is not equal to expected title");
     }
@@ -27,7 +28,7 @@ public class LoginTests : BaseTest
         Driver.Goto(ConfigData.GmailUrl);
 
         EmailPage.EnterEmail(email);
-        EmailPage.EnterEmailNextButton();
+        EmailPage.EmailNextButton.Click();
 
         var actualText = EmailPage.GetErrorTextForWrongAddress();
         Assert.AreEqual(ErrorData.WrongEmailAddress, actualText, "You entered correct email address!");
@@ -38,8 +39,8 @@ public class LoginTests : BaseTest
     {
         Driver.Goto(ConfigData.GmailUrl);
 
-        EmailPage.EnterEmail("");
-        EmailPage.EnterEmailNextButton();
+        EmailPage.EnterEmail(String.Empty);
+        EmailPage.EmailNextButton.Click();
         
         var actualText = EmailPage.GetErrorTextForEmptyAddress();
         Assert.AreEqual(ErrorData.EmptyEmailAddress, actualText, "You did not enter empty email address!");
@@ -52,26 +53,25 @@ public class LoginTests : BaseTest
         Driver.Goto(ConfigData.GmailUrl);
         
         EmailPage.EnterEmail(GmailCredentials.Mail);
-        EmailPage.EnterEmailNextButton();
+        EmailPage.EmailNextButton.Click();
         
         PasswordPage.EnterPassword(wrongPassword);
-        PasswordPage.ClickNextButton();
-
+        PasswordPage.PasswordNextButton.Click();
+        
         var actualErrorText = PasswordPage.GetErrorMessage();
         Assert.AreEqual(ErrorData.WrongPassword, actualErrorText, "Please enter wrong password credentials!");
     }
 
     [Test]
-    [TestCase("")]
-    public void LoginWithEmptyPasswordTest(string password)
+    public void LoginWithEmptyPasswordTest( )
     {
         Driver.Goto(ConfigData.GmailUrl);
 
         EmailPage.EnterEmail(GmailCredentials.Mail);
-        EmailPage.EnterEmailNextButton();
+        EmailPage.EmailNextButton.Click();
         
-        PasswordPage.EnterPassword(password);
-        PasswordPage.ClickNextButton();
+        PasswordPage.EnterPassword(string.Empty);
+        PasswordPage.PasswordNextButton.Click();
 
         var actualErrorText = PasswordPage.GetErrorMessage();
         Assert.AreEqual( ErrorData.EmptyPassword, actualErrorText, "You did not enter empty password credentials!");

@@ -1,30 +1,34 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0cc52af9_002D77a6_002D49ef_002D8d34_002D5a24e57ca1a7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="LoginWithCorrectCredentialsTest #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithCorrectCredentialsTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithEmptyPasswordTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e79692ad_002Df09b_002D4d36_002Da73d_002Da9eb4a943796/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="LoginWithWrongEmailAddressTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;ProjectFile&gt;05F4777D-EA42-4474-A6E6-BC4F3ED15F07/d:TestCases/f:ChangeSettingsTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;05F4777D-EA42-4474-A6E6-BC4F3ED15F07/d:TestCases/f:LoginTests.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithWrongEmailAddressTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithEmptyEmailAddressTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.ChangeSettingsTests.ChangeUserNickNameTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.MessagingTests.SendMessageToSecondAccountTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.MessagingTests.ReadMessageAndReplyBackToFirstAccountTest&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3760640a_002D0945_002D4878_002Da52d_002D96a53256d1ae/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="LoginWithCorrectCredentialsTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f7051e5a_002Dbde3_002D465f_002Dbfc7_002D15855003988b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="LoginWithEmptyEmailAddressTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithCorrectCredentialsTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7ecf921d_002D3615_002D4846_002D8264_002D10fa436c7ca7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="LoginWithWrongPasswordTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithEmptyEmailAddressTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithWrongPasswordTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithEmptyPasswordTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.UsernameChangeTests.ChangeUserNickNameTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithCorrectCredentialsTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.MessagingTests.SendMessageToSecondAccountTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithEmptyEmailAddressTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithWrongEmailAddressTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b2626c34_002D0063_002D4a1f_002Db6a0_002D023d5dcc5bec/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="LoginWithCorrectCredentialsTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::05F4777D-EA42-4474-A6E6-BC4F3ED15F07::net6.0::ConsoleApp1.TestCases.LoginTests.LoginWithCorrectCredentialsTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

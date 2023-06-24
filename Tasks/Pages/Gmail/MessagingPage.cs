@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 public class MessagingPage
 {
     // Declaring locators
-    public By To => By.XPath("//input[contains(@class, 'aFw')]");
+    public By To => By.XPath("//input[@role='combobox']");
     
     public By Subject => By.XPath("//input[@name='subjectbox']");
 

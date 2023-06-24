@@ -15,10 +15,4 @@ public static class WaitUtils
 
     public static void WaitForElementToBeClickable(By uniqueLocator) => 
         Wait.Until(ExpectedConditions.ElementToBeClickable(uniqueLocator));
-
-    public static void WaitUntilPageIsFullyLoaded()
-    {
-        Wait.Until(d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete"));
-    }
-    
 }

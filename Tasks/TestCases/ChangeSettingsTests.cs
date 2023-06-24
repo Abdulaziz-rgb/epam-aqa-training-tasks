@@ -12,10 +12,10 @@ public class ChangeSettingsTests : BaseTest
         Driver.Goto(ConfigData.GmailUrl);
         
         EmailPage.EnterEmail(GmailCredentials.Mail);
-        EmailPage.EnterEmailNextButton(); 
+        EmailPage.EmailNextButton.Click(); 
         
         PasswordPage.EnterPassword(GmailCredentials.Password);
-        PasswordPage.ClickNextButton();
+        PasswordPage.PasswordNextButton.Click();
         
         MainPage.EnterDownArrowLink();
         MainPage.EnterSettings();
@@ -23,8 +23,7 @@ public class ChangeSettingsTests : BaseTest
         SettingsPage.ClickAccountLink();
         SettingsPage.ClickEditButton();
         SettingsPage.EnterNewNickAndSave(ConfigData.NewNickname);
-        Thread.Sleep(2000);
-        
+
         Assert.AreEqual(ExpectedData.NickName, SettingsPage.GetNewNick(), "Names do not match with each other");
     }
 }

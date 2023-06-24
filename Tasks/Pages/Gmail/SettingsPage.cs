@@ -2,20 +2,22 @@
 
 using Utils;
 using OpenQA.Selenium;
+using System.Collections.ObjectModel;
 
 public class SettingsPage
 {
     // Declaring locators
-    public By AccountsLinkLocator => By.XPath("//div[@class='f1']/a[contains(@href,'accounts')]");
+    public By AccountsLinkLocator => By.XPath("//a[contains(@href,'accounts') and @role='tab']");
 
     public By EditButtonLocator => By.XPath("//span[text()='edit info']");
 
-    public By EditBoxInputLocator => By.Id("cfn");
+    public By EditBoxInputLocator => By.XPath("//input[@name='cfn']");
 
-    public By SaveButtonLocator => By.Id("bttn_sub");
+    public By SaveButtonLocator => By.XPath("//input[@type='submit']");
 
-    public By NamePlaceLocator => By.XPath("//td/div[@class='rc']");
-    
+    // tried to change but not other option
+    public By NamePlaceLocator => By.XPath("//td/div[@class='rc']"); 
+
     // Declaring elements
     public IWebElement AccountsLink => Driver.GetInstance().FindElement(AccountsLinkLocator);
 
@@ -26,7 +28,9 @@ public class SettingsPage
     public IWebElement SaveButton => Driver.GetInstance().FindElement(SaveButtonLocator);
 
     public IWebElement NamePlace => Driver.GetInstance().FindElement(NamePlaceLocator);
-    
+
+    public ReadOnlyCollection<string> Tabs => Driver.GetInstance().WindowHandles;
+
     // Declaring page methods
     public void ClickAccountLink()
     {
@@ -43,8 +47,7 @@ public class SettingsPage
 
     public void EnterNewNickAndSave(string newNickname)
     {
-        var tabs = Driver.GetInstance().WindowHandles;
-        Driver.GetInstance().SwitchTo().Window(tabs[1]);
+        Driver.GetInstance().SwitchTo().Window(Tabs[1]);
         EditBoxInput.Click();
         EditBoxInput.Clear();
         EditBoxInput.SendKeys(newNickname);
@@ -53,9 +56,9 @@ public class SettingsPage
 
     public string GetNewNick()
     {
-        var tabs = Driver.GetInstance().WindowHandles;
-        Driver.GetInstance().SwitchTo().Window(tabs[0]);
-        var name = NamePlace.Text.Split("<")[0].Trim();
-        return name;
+        Driver.GetInstance().SwitchTo().Window(Tabs[0]);
+        WaitUtils.WaitForElementToBeClickable(NamePlaceLocator);
+        
+        return NamePlace.Text.Split("<")[0].Trim();
     }
 }

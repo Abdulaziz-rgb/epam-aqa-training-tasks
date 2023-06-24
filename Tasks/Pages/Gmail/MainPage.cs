@@ -12,13 +12,13 @@ public class MainPage
 
     public By ComposeBtnLocator => By.XPath("//div[@gh='cm']");
     
-    public By SenderMessageLabelLocator => By.XPath("//div[@class='Cp']//tr[1]");
-    
+    public By ReceivedMessagesLabelLocator => By.XPath("//div[@class='Cp']//tr");
+
     public By ReplyBtnLocator => By.XPath("//span[contains(@class, 'bkH') and contains(text(),'Reply')]");
 
     public By TextAreaLocator => By.XPath("//div[@role='textbox']");
-
-    public By SendBtnLocator => By.XPath("//td[@class='gU Up']");
+    
+    public By SendBtnLocator => By.XPath("//div[@role='button' and contains(@aria-label, 'Send')]");
     
     // Declaring elements
     public IWebElement DownArrow => Driver.GetInstance().FindElement(DownArrowLocator);
@@ -27,8 +27,8 @@ public class MainPage
 
     public IWebElement ComposeButton => Driver.GetInstance().FindElement(ComposeBtnLocator);
     
-    public IWebElement SenderMessageLabel =>
-        Driver.GetInstance().FindElement(SenderMessageLabelLocator);
+    public List<IWebElement> ReceivedMessagesList =>
+        Driver.GetInstance().FindElements(ReceivedMessagesLabelLocator).ToList();
 
     public IWebElement ReplyButton =>
         Driver.GetInstance().FindElement(ReplyBtnLocator);
@@ -59,8 +59,8 @@ public class MainPage
 
     public void EnterSenderMessageLabel()
     {
-        WaitUtils.WaitForElementVisibility(SenderMessageLabelLocator);
-        SenderMessageLabel.Click();
+        WaitUtils.WaitForElementVisibility(ReceivedMessagesLabelLocator);
+        ReceivedMessagesList.ElementAt(0).Click();
     }
 
     public void ClickReplyBtn()
@@ -74,6 +74,7 @@ public class MainPage
         WaitUtils.WaitForElementToBeClickable(TextAreaLocator);
         TextArea.Click();
         TextArea.SendKeys(message);
+        WaitUtils.WaitForElementToBeClickable(SendBtnLocator);
         SendButton.Click();
     }
 }

@@ -12,10 +12,10 @@ public class MessagingTests : BaseTest
         Driver.Goto(ConfigData.GmailUrl);
         
         EmailPage.EnterEmail(GmailCredentials.Mail);
-        EmailPage.EnterEmailNextButton();
+        EmailPage.EmailNextButton.Click();
         
         PasswordPage.EnterPassword(GmailCredentials.Password);
-        PasswordPage.ClickNextButton();
+        PasswordPage.PasswordNextButton.Click();
             
         MainPage.ClickMessageBox();
         
@@ -32,10 +32,10 @@ public class MessagingTests : BaseTest
         Driver.Goto(ConfigData.GmailUrl);
         
         EmailPage.EnterEmail(ProtonCredentials.Mail);
-        EmailPage.EnterEmailNextButton();
+        EmailPage.EmailNextButton.Click();
         
         PasswordPage.EnterPassword(ProtonCredentials.Password);
-        PasswordPage.ClickNextButton();
+        PasswordPage.PasswordNextButton.Click();
         
         MainPage.EnterSenderMessageLabel();
         MainPage.ClickReplyBtn();

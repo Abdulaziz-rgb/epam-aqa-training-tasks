@@ -25,7 +25,7 @@ public sealed class Logger
 
     private LoggingConfiguration GetConfiguration()
     {
-        string str = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} ${level:uppercase=true} - ${message}";
+        string layoutName = "${date:format=yyyy-MM-dd HH\\:mm\\:ss} ${level:uppercase=true} - ${message}";
         LoggingConfiguration configuration = new LoggingConfiguration();
         
         LogLevel debug = LogLevel.Debug;
@@ -35,22 +35,18 @@ public sealed class Logger
 
         var testName = TestContext.CurrentContext.Test.Name;
         var testId = TestContext.CurrentContext.Test.ID;
-        
+
         fileTarget.FileName = @$"../../../Log/{testName}_{testId}.log";
-        fileTarget.Layout = str;
+        fileTarget.Layout = layoutName;
         configuration.AddRule(debug, fatal2, fileTarget);
         return configuration;
     }
 
     public static Logger Instance => LazyInstance.Value;
 
-    public void Debug(string message) => _log.Debug(message);
-
     public void Info(string message) => _log.Info(message);
 
     public void Warn(string message) => _log.Warn(message);
 
     public void Error(string message) => _log.Error(message);
-
-    public void Fatal(string message) => _log.Fatal(message);
 }
