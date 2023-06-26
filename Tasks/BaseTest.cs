@@ -33,6 +33,7 @@ public abstract class BaseTest
     [OneTimeSetUp]
     public void BeforeAll()
     {
+        Logger.Instance.Info("Fetching User Data....");
         UserData = ConfigManager.SetUserData();
         GmailCredentials = UserData[0];
         ProtonCredentials = UserData[1];
@@ -41,6 +42,7 @@ public abstract class BaseTest
     [SetUp]
     public void BeforeEach()
     {
+        Logger.Instance.Info("Fetching Config Data...");
         ErrorData = ConfigManager.SetErrorData();
         ConfigData = ConfigManager.SetConfigData();
         ExpectedData = ConfigManager.SetExpectedData();
@@ -71,6 +73,6 @@ public abstract class BaseTest
             Logger.Instance.Warn("Outcome: " + outcome);
         }
         
-        // Driver.Quit();
+        Driver.Quit();
     }
 }
