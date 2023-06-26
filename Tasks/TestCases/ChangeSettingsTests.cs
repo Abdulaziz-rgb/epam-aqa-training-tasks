@@ -7,6 +7,7 @@ using NUnit.Framework;
 public class ChangeSettingsTests : BaseTest
 {
     [Test]
+    [Category("ChangeUserNickName")]
     public void ChangeUserNickNameTest()
     {
         Driver.Goto(ConfigData.GmailUrl);

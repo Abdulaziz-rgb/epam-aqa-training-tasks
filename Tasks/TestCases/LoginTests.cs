@@ -23,6 +23,7 @@ public class LoginTests : BaseTest
     
     [Test]
     [TestCase("gkhdsf@gmail.com")]
+    [Category("LoginWithWrongEmailAddress")]
     public void LoginWithWrongEmailAddressTest(string email)
     {
         Driver.Goto(ConfigData.GmailUrl);
@@ -35,6 +36,7 @@ public class LoginTests : BaseTest
     }
     
     [Test]
+    [Category("LoginWithEmptyEmailAddress")]
     public void LoginWithEmptyEmailAddressTest()
     {
         Driver.Goto(ConfigData.GmailUrl);
@@ -48,6 +50,7 @@ public class LoginTests : BaseTest
     
     [Test]
     [TestCase("sdf32343")]
+    [Category("LoginWithWrongPassword")]
     public void LoginWithWrongPasswordTest(string wrongPassword)
     {
         Driver.Goto(ConfigData.GmailUrl);
@@ -63,6 +66,7 @@ public class LoginTests : BaseTest
     }
 
     [Test]
+    [Category("LoginWithEmptyPassword")]
     public void LoginWithEmptyPasswordTest( )
     {
         Driver.Goto(ConfigData.GmailUrl);
