@@ -14,16 +14,22 @@ public class Driver
         if (_Driver == null)
         {
             _Driver = DriverFactory.Build(ConfigManager.ReadEnvironment().Browser);
+            Logger.Instance.Info(ConfigManager.ReadEnvironment().Browser);
             _Driver.Manage().Window.Maximize();
         }
 
         return _Driver;
     }
 
-    public static void Goto(string url) => GetInstance().Navigate().GoToUrl(url);
+    public static void Goto(string url)
+    {
+        Logger.Instance.Info($"Navigating to : {url}");
+        GetInstance().Navigate().GoToUrl(url);
+    }
 
     public static void Quit()
     {
+        Logger.Instance.Info("Disposing web browser");
         GetInstance().Quit();
         GetInstance().Dispose();
     }

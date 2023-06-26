@@ -71,6 +71,6 @@ public abstract class BaseTest
             Logger.Instance.Warn("Outcome: " + outcome);
         }
         
-        Driver.Quit();
+        // Driver.Quit();
     }
 }
