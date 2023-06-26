@@ -6,7 +6,7 @@ using SeleniumExtras.WaitHelpers;
 
 public static class WaitUtils
 {
-    public static WebDriverWait Wait = new(Driver.GetInstance(), TimeSpan.FromSeconds(40));
+    public static WebDriverWait Wait = new(Driver.GetInstance(), TimeSpan.FromSeconds(ConfigManager.ReadEnvironment().WaitTimeOut));
 
     static WaitUtils() { }
     

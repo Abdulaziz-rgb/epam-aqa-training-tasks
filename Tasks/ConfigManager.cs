@@ -72,4 +72,13 @@ public static class ConfigManager
     
         return JsonSerializer.Deserialize<T>(jsonStr);
     }
+
+    public static EnvironmentModel ReadEnvironment()
+    {
+        var environment = Environment.GetEnvironmentVariable("environment");
+        var fullPath = WorkspaceDirectoryJson + $@"\{environment}.json";
+        var jsonStr = File.ReadAllText(fullPath);
+
+        return JsonSerializer.Deserialize<EnvironmentModel>(jsonStr);
+    }
 }
