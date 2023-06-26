@@ -31,7 +31,7 @@ public sealed class Logger
         LogLevel debug = LogLevel.Debug;
         LogLevel fatal2 = LogLevel.Fatal;
         FileTarget fileTarget = new FileTarget("logfile");
-        fileTarget.DeleteOldFileOnStartup = false;
+        fileTarget.DeleteOldFileOnStartup = true;
 
         var testName = TestContext.CurrentContext.Test.Name;
         var testId = TestContext.CurrentContext.Test.ID;

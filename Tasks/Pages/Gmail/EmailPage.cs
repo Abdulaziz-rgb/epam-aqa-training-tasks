@@ -11,9 +11,8 @@ public class EmailPage
     public By EmailFieldLocator => By.XPath("//input[@type='email']");
     
     public By EmailNextBtnLocator => By.XPath("//div[contains(@id, 'Next')]");
-
-    // changed -> //h1[@id='headingText']/span, but the test failed to run
-    public By WrongAddressErrorTextLocator => By.XPath("//h1[@id='headingText']/span");
+    
+    public By WrongAddressErrorTextLocator => By.XPath("//span[text()='Couldn’t sign you in']");
     
     public By EmptyAddressErrorTextLocator => By.XPath("//div[contains(@class, 'Jj6Lae')]");
     
