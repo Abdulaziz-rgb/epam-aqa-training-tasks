@@ -1,4 +1,3 @@
 ﻿{
-  "WaitTimeOut" : 60,
-  "Browser": "firefox"
+  "WaitTimeOut" : 80
 }

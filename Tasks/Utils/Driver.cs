@@ -13,8 +13,9 @@ public class Driver
     {
         if (_Driver == null)
         {
-            _Driver = DriverFactory.Build(ConfigManager.ReadEnvironment().Browser);
-            Logger.Instance.Info(ConfigManager.ReadEnvironment().Browser);
+            var browser = ConfigManager.ReadBrowserName();
+            _Driver = DriverFactory.Build(browser);
+            Logger.Instance.Info($"Browser -> ");
             _Driver.Manage().Window.Maximize();
         }
 

@@ -1,4 +1,3 @@
 ﻿{
-  "WaitTimeOut" : 60,
-  "Browser": "chrome"
+  "WaitTimeOut" : 60
 }

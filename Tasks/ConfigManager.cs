@@ -78,7 +78,9 @@ public static class ConfigManager
         var environment = Environment.GetEnvironmentVariable("environment");
         var fullPath = WorkspaceDirectoryJson + $@"\{environment}.json";
         var jsonStr = File.ReadAllText(fullPath);
-
-        return JsonSerializer.Deserialize<EnvironmentModel>(jsonStr);
+        
+        return  JsonSerializer.Deserialize<EnvironmentModel>(jsonStr);
     }
+
+    public static string ReadBrowserName() => Environment.GetEnvironmentVariable("browser");
 }

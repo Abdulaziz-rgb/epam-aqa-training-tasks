@@ -66,7 +66,7 @@ public class LoginTests : BaseTest
     }
 
     [Test]
-    [Category("LoginWithEmptyPassword")]
+    [Category("LoginTests")]
     public void LoginWithEmptyPasswordTest( )
     {
         Driver.Goto(ConfigData.GmailUrl);
