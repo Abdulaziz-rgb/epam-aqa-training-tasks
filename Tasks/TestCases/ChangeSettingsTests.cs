@@ -4,6 +4,7 @@ using Utils;
 using NUnit.Framework;
 
 [TestFixture]
+[Parallelizable]
 public class ChangeSettingsTests : BaseTest
 {
     [Test]
