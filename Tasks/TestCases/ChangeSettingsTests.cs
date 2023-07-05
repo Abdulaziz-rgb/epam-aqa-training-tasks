@@ -4,11 +4,11 @@ using Utils;
 using NUnit.Framework;
 
 [TestFixture]
-[Parallelizable]
 public class ChangeSettingsTests : BaseTest
 {
     [Test]
-    [Category("ChangeUserNickName")]
+    // [Category("AllRegression")]
+    [Parallelizable(ParallelScope.Self)]
     public void ChangeUserNickNameTest()
     {
         Driver.Goto(ConfigData.GmailUrl);

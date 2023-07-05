@@ -45,7 +45,8 @@ public class Driver
     {   
         var ss = ((ITakesScreenshot)GetInstance()).GetScreenshot();
         var ssFileName = Path.Combine($"../../../Screenshots/");
-        var timestamp = DateTime.Now.ToString("yy-MM-dd hh-mm-ss").Trim().Replace(' ', '_').Replace('-', '_');
+        var now = DateTime.Now;
+        var timestamp = now.ToString("yy-MM-dd hh-mm-ss").Trim().Replace(' ', '_').Replace('-', '_');
 
         ss.SaveAsFile($"{ssFileName}_{timestamp}.png", ScreenshotImageFormat.Png);
     }

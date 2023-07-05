@@ -7,6 +7,8 @@ using NUnit.Framework;
 public class MessagingTests : BaseTest
 {
     [Test]
+    // [Category("AllRegression")]
+    [Parallelizable(ParallelScope.Self)]
     public void SendMessageToSecondAccountTest()
     {
         Driver.Goto(ConfigData.GmailUrl);
@@ -27,6 +29,8 @@ public class MessagingTests : BaseTest
     }
 
     [Test]
+    // [Category("AllRegression")]
+    [Parallelizable(ParallelScope.Self)]
     public void ReadMessageAndReplyBackToFirstAccountTest()
     {
         Driver.Goto(ConfigData.GmailUrl);

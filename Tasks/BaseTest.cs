@@ -8,6 +8,8 @@ using NUnit.Framework.Interfaces;
 
 public abstract class BaseTest
 {
+    
+    // C:\ProgramData\Jenkins\.jenkins\workspace\selenium-framework-automation
     public static EmailPage EmailPage;
 
     public static PasswordPage PasswordPage;
@@ -54,7 +56,7 @@ public abstract class BaseTest
         SettingsPage = new SettingsPage();
         MessagingPage = new MessagingPage();
     }
-
+    
     [TearDown]
     public void AfterEach()
     {

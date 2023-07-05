@@ -8,7 +8,7 @@ using NUnit.Framework;
 public class LoginTests : BaseTest
 {
     [Test]
-    [Category("LoginTests")]
+    [Category("AllRegression")]
     public void LoginWithCorrectCredentialsTest()
     {
         Driver.Goto(ConfigData.GmailUrl);
@@ -23,9 +23,9 @@ public class LoginTests : BaseTest
     }
     
     [Test]
-    [Parallelizable(ParallelScope.All)]
     [TestCase("gkhdsf@gmail.com")]
-    [Category("LoginTests")]
+    [Category("AllRegression")]
+    [Category("Smoke")]
     public void LoginWithWrongEmailAddressTest(string email)
     {
         Driver.Goto(ConfigData.GmailUrl);
@@ -38,8 +38,8 @@ public class LoginTests : BaseTest
     }
     
     [Test]
-   
-    [Category("LoginTests")]
+    [Category("AllRegression")]
+    [Category("Smoke")]
     public void LoginWithEmptyEmailAddressTest()
     {
         Driver.Goto(ConfigData.GmailUrl);
@@ -52,9 +52,8 @@ public class LoginTests : BaseTest
     }
     
     [Test]
-    [Parallelizable(ParallelScope.All)]
+    [Category("AllRegression")]
     [TestCase("sdf32343")]
-    [Category("LoginTests")]
     public void LoginWithWrongPasswordTest(string wrongPassword)
     {
         Driver.Goto(ConfigData.GmailUrl);
@@ -70,7 +69,7 @@ public class LoginTests : BaseTest
     }
 
     [Test]
-    [Category("LoginTests")]
+    [Category("AllRegression")]
     public void LoginWithEmptyPasswordTest()
     {
         Driver.Goto(ConfigData.GmailUrl);
